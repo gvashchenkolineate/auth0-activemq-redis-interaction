@@ -36,3 +36,5 @@ docker/**/.env
 
 # Unignore packaged executables
 !/.mvn/wrapper/maven-wrapper.jar
+
+**/.env
