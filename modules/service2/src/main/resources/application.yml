@@ -1,6 +1,6 @@
 debug: true
 server:
-  port: 3010
+  port: 3020
 
 auth0:
   client-id: ${AUTH0_CLIENT_ID}

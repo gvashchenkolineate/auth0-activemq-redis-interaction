@@ -19,6 +19,7 @@
   <modules>
     <module>modules/service1</module>
     <module>modules/service2</module>
+    <module>modules/auth0</module>
   </modules>
 
 
