@@ -15,9 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class RequestsController {
     private RequestsService requestsService;
 
-    @GetMapping(value = "/token/retrieve")
+    @GetMapping(value = "/token/update")
     public Message retrieveNewToken() {
         var token = requestsService.retrieveToken();
         return new Message("New token retrieved: " + token.toString());
+    }
+
+    @GetMapping(value = "/token/get")
+    public Message getToken() {
+        var token = requestsService.getToken();
+        return new Message("Token is: " + token);
     }
 }

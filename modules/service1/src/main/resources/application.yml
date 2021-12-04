@@ -19,3 +19,8 @@ spring:
           # Replace with the domain of your Auth0 tenant.
           # Note the trailing slash is important!
           issuer-uri: ${AUTH0_ISSUER_URI}
+
+redis:
+  enabled: true
+  host: ${REDIS_HOST}
+  port: ${REDIS_PORT}

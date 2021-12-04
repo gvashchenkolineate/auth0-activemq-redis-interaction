@@ -35,6 +35,7 @@ public class Auth0TokenRetriever {
 
         // TODO throw exceptions
 
+        log.info("Token successfully retrieved: {}", response);
         return objectMapper.convertValue(response.getBody(), new TypeReference<>() {
         });
     }

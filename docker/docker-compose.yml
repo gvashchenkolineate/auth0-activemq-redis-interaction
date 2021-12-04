@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  redis:
+    image: 'bitnami/redis:6.2.6'
+    environment:
+      - REDIS_PORT_NUMBER=6379
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '6379:6379'
+    volumes:
+      # TODO specify persistent storage instead of docker volume to allow backup-restore
+      - redis-data:/bitnami/redis/data
+
+volumes:
+  redis-data:

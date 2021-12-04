@@ -5,6 +5,7 @@ import com.lineate.internal.idp.interaction.auth0.request.TokenRequest;
 import com.lineate.internal.idp.interaction.auth0.response.TokenResponse;
 import com.lineate.internal.idp.interaction.service1.security.Auth0Properties;
 import com.lineate.internal.idp.interaction.service1.security.IssuerProperties;
+import com.lineate.internal.idp.interaction.storage.TokenStorage;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class RequestsService {
     private Auth0TokenRetriever tokenRetriever;
     private Auth0Properties auth0Properties;
     private IssuerProperties issuerProperties;
+    private TokenStorage tokenStorage;
 
 
     public TokenResponse retrieveToken() {
@@ -24,6 +26,14 @@ public class RequestsService {
                 .clientSecret(auth0Properties.getClientSecret())
                 .audience(auth0Properties.getAudience().getService1())
                 .build();
-        return tokenRetriever.requestToken(issuerProperties.getIssuerUri(), request);
+        TokenResponse response = tokenRetriever.requestToken(issuerProperties.getIssuerUri(), request);
+
+        tokenStorage.save(auth0Properties.getAudience().getService1(), response.getAccessToken());
+
+        return response;
+    }
+
+    public String getToken() {
+        return tokenStorage.get(auth0Properties.getAudience().getService1());
     }
 }

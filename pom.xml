@@ -20,6 +20,7 @@
     <module>modules/service1</module>
     <module>modules/service2</module>
     <module>modules/auth0</module>
+    <module>modules/common</module>
   </modules>
 
 
@@ -32,6 +33,15 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
