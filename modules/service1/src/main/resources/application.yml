@@ -20,6 +20,11 @@ spring:
           # Note the trailing slash is important!
           issuer-uri: ${AUTH0_ISSUER_URI}
 
+  activemq:
+    broker-url: ${ACTIVEMQ_URL}
+    user: ${ACTIVEMQ_USERNAME}
+    password: ${ACTIVEMQ_PASSWORD}
+
 redis:
   enabled: true
   host: ${REDIS_HOST}

@@ -12,5 +12,16 @@ services:
       # TODO specify persistent storage instead of docker volume to allow backup-restore
       - redis-data:/bitnami/redis/data
 
+  activemq:
+    image: 'rmohr/activemq:5.15.9'
+    ports:
+      - '61616:61616'
+      - '8161:8161'
+    volumes:
+      - activemq-conf:/opt/activemq/conf
+      - activemq-data:/opt/activemq/data
+
 volumes:
   redis-data:
+  activemq-conf:
+  activemq-data:

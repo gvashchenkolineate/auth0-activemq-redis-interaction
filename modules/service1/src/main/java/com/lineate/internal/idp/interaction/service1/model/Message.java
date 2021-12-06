@@ -1,17 +1,8 @@
 package com.lineate.internal.idp.interaction.service1.model;
 
-/**
- * Simple domain object for our API to return a message.
- */
+import lombok.Value;
+
+@Value
 public class Message {
-    private final String message;
-
-    public Message(String message) {
-        this.message = message;
-    }
-
-    @SuppressWarnings("unused")
-    public String getMessage() {
-        return this.message;
-    }
+    String message;
 }
