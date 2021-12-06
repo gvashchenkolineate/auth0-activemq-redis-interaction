@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @AllArgsConstructor
 @Service
-public class RequestsService {
+public class TokenService {
     private Auth0TokenRetriever tokenRetriever;
     private Auth0Properties auth0Properties;
     private IssuerProperties issuerProperties;

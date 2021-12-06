@@ -1,1 +1,1 @@
-curl http://localhost:3010/api/requests/token/update
+curl http://localhost:3010/api/token/update
